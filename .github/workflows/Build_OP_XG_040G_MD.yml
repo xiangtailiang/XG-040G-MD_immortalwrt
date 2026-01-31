@@ -90,7 +90,10 @@ jobs:
 
     - name: Configuration Customization
       run: |
-      
+        # 修改 DTS: 增加 UBI 预留 PEB 从 100 到 200，解决 6.12 内核警告
+        sed -i 's/ubi-reserved-pebs = <100>/ubi-reserved-pebs = <200>/' openwrt/target/linux/airoha/dts/an7581-xg-040g-md.dts
+        echo "DTS patched: ubi-reserved-pebs = 200"
+        
         cp -fv "${CONFIG_FILE}" openwrt/.config
         
     - name: Download package
