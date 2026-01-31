@@ -1,48 +1,38 @@
-高通骁龙410云编译immortalwrt
+# XG-040G-MD ImmortalWrt 固件
 
-固件主要添加超多 无线网卡驱动为目的!
+Nokia Bell XG-040G-MD 光猫的 ImmortalWrt 固件云编译项目。
 
-目前开启usb网络共享驱动
+## 📦 设备信息
 
-kmod-usb-net-cdc-ether kmod-usb-net-cdc-mbim kmod-usb-net-cdc-ncm kmod-usb-net-huawei-cdc-ncm kmod-usb-net-ipheth 
-kmod-usb-net-rndis
+| 项目 | 说明 |
+|------|------|
+| 设备型号 | Nokia Bell XG-040G-MD |
+| 芯片 | Airoha AN7581 |
+| 架构 | aarch64_cortex-a53 |
+| 内核版本 | 6.12.x |
+| 源码 | [bingoguo93/immortalwrt](https://github.com/bingoguo93/immortalwrt) |
 
-目前开启的Realtek系列网卡
+## 🛠️ 固件版本
 
-kmod-rtw88-8812a
-kmod-rtw88-8812au
-kmod-rtw88-8814a
-kmod-rtw88-8814au
-kmod-rtw88-8821a
-kmod-rtw88-8821au
-kmod-rtw88-8821c
-kmod-rtw88-8821cu
-kmod-rtw88-8822b
-kmod-rtw88-8822bu
-kmod-rtw88-8822c
-kmod-rtw88-8822cs
-kmod-rtw88-8822cu
-kmod-rtl8188eu
+| 工作流 | 说明 |
+|--------|------|
+| `Build_OP_XG_040G_MD` | 带 WiFi 支持的完整版 |
+| `Build_XG_040G_MD_no_wifi` | 无 WiFi 精简版 |
 
-目前开启的爱科微 aic系列网卡
-kmod-aic8800-sdio
-kmod-aic8800-usb
+## ✨ 主要功能
 
-需要其他插件自行通过config_small配置添加，注意同时开启对应依赖选项
+- OpenClash 代理工具
+- HomeProxy 代理工具
+- PassWall 代理工具
+- USB 存储支持
+- 多文件系统支持 (NTFS/exFAT/FAT)
 
+## 📋 使用说明
 
-## Credits
+1. 在 Actions 页面选择对应的工作流
+2. 点击 "Run workflow" 开始编译
+3. 编译完成后在 Releases 页面下载固件
 
-- [Microsoft Azure](https://azure.microsoft.com)
-- [GitHub Actions](https://github.com/features/actions)
-- [OpenWrt](https://github.com/openwrt/openwrt)
-- [coolsnowwolf/lede](https://github.com/coolsnowwolf/lede)
-- [Mikubill/transfer](https://github.com/Mikubill/transfer)
-- [softprops/action-gh-release](https://github.com/softprops/action-gh-release)
-- [Mattraks/delete-workflow-runs](https://github.com/Mattraks/delete-workflow-runs)
-- [dev-drprasad/delete-older-releases](https://github.com/dev-drprasad/delete-older-releases)
-- [peter-evans/repository-dispatch](https://github.com/peter-evans/repository-dispatch)
+## 📜 License
 
-## License
-
-[MIT](https://github.com/P3TERX/Actions-OpenWrt/blob/main/LICENSE) © [**P3TERX**](https://p3terx.com)
+[MIT](LICENSE)
