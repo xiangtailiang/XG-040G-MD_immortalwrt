@@ -108,6 +108,17 @@ jobs:
           echo "❌ DTS patch FAILED!"
           exit 1
         fi
+
+        # 修改 DTS: 设置 SPI 频率为 20MHz
+        echo "Patching spi-max-frequency to 20MHz..."
+        sed -i '/&spi_nand {/a \ \ \ \ spi-max-frequency = <20000000>;' "$DTS_FILE"
+        
+        if grep -q "spi-max-frequency = <20000000>;" "$DTS_FILE"; then
+           echo "✅ DTS patched successfully: spi-max-frequency = 20000000"
+        else
+           echo "❌ DTS patch spi-max-frequency FAILED!"
+           exit 1
+        fi
         
         cp -fv "${CONFIG_FILE}" openwrt/.config
         
