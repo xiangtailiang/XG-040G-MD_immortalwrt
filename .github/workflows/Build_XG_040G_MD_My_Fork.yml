@@ -82,6 +82,7 @@ jobs:
       working-directory: ./openwrt
       run: |
         ./scripts/feeds update -a
+        wget -O feeds/packages/lang/rust/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/lang/rust/Makefile
         rm -rf feeds/luci/applications/luci-app-openclash
         cp -r ../OpenClash/luci-app-openclash feeds/luci/applications/
         ./scripts/feeds install -a -f
